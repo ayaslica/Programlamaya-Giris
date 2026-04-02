@@ -1,0 +1,75 @@
+app:
+  name: FinAnalytica
+  env: dev
+  debug: true
+  default_timezone: UTC
+
+thresholds:
+  buy: 4.0
+  sell: -3.0
+
+weights:
+  rsi: 1.0
+  macd: 1.2
+  vwap: 0.8
+  cvd: 0.6
+  ema_sma: 0.8
+  ichimoku: 1.1
+  fibonacci: 0.7
+  mfi: 0.8
+  volume_profile: 0.6
+  divergence_regular: 1.5
+  divergence_hidden: 1.0
+
+fallbacks:
+  rsi: 50.0
+  macd: 0.0
+  macd_signal: 0.0
+  macd_hist: 0.0
+  vwap: 0.0
+  cvd: 0.0
+  ema: 0.0
+  sma: 0.0
+  ichimoku_tenkan: 0.0
+  ichimoku_kijun: 0.0
+  fib_zone: 0.5
+  mfi: 50.0
+  volume_profile_poc: 0.0
+
+analysis:
+  min_bars: 100
+  divergence_lookback: 5
+  divergence_min_distance: 3
+  default_period_map:
+    1h: 60d
+    4h: 180d
+    1d: 3y
+  timeframes: ["1h", "4h", "1d"]
+
+risk:
+  stop_loss_pct: 0.02
+  take_profit_pct: 0.04
+  trailing_stop_pct: 0.015
+  time_stop_bars: 24
+  risk_per_trade_pct: 0.01
+  fixed_lot: 1.0
+  fee_pct: 0.001
+  slippage_pct: 0.0005
+
+cache:
+  ohlcv_open_ttl_sec: 300
+  ohlcv_closed_ttl_sec: 3600
+  indicators_ttl_sec: 1200
+  backtest_ttl_sec: 86400
+  scan_results_ttl_sec: 300
+
+scan:
+  max_symbols: 20
+  max_workers: 8
+  rebalance_frequency: daily
+
+rate_limit:
+  requests_per_minute: 60
+
+rules:
+  path: config/rules.json

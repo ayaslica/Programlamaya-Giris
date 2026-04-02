@@ -1,0 +1,50 @@
+[
+  {
+    "name": "rsi_oversold",
+    "condition": "rsi < 35",
+    "weight": 1.2,
+    "type": "optional",
+    "reason_pass": "RSI aşırı satım bölgesinde.",
+    "reason_fail": "RSI aşırı satımda değil."
+  },
+  {
+    "name": "rsi_overbought",
+    "condition": "rsi > 70",
+    "weight": -1.2,
+    "type": "optional",
+    "reason_pass": "RSI aşırı alım bölgesinde.",
+    "reason_fail": "RSI aşırı alımda değil."
+  },
+  {
+    "name": "macd_positive",
+    "condition": "macd_hist > 0",
+    "weight": 1.0,
+    "type": "optional",
+    "reason_pass": "MACD histogram pozitif.",
+    "reason_fail": "MACD histogram pozitif değil."
+  },
+  {
+    "name": "price_above_vwap",
+    "condition": "close > vwap",
+    "weight": 0.8,
+    "type": "mandatory",
+    "reason_pass": "Fiyat VWAP üzerinde.",
+    "reason_fail": "Fiyat VWAP altında."
+  },
+  {
+    "name": "ema_trend_up",
+    "condition": "ema_fast > ema_slow",
+    "weight": 0.9,
+    "type": "mandatory",
+    "reason_pass": "Kısa EMA uzun EMA üzerinde.",
+    "reason_fail": "Trend teyidi yok."
+  },
+  {
+    "name": "mfi_supportive",
+    "condition": "mfi > 45 and mfi < 80",
+    "weight": 0.6,
+    "type": "optional",
+    "reason_pass": "MFI dengeli yükselişte.",
+    "reason_fail": "MFI uygun aralıkta değil."
+  }
+]
