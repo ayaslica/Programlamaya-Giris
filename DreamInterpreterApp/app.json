@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "DreamInterpreterApp",
+    "slug": "dream-interpreter-app",
+    "version": "0.1.0",
+    "sdkVersion": "49.0.0",
+    "extra": {
+      "openaiApiKey": "YOUR_API_KEY"
+    }
+  }
+}
